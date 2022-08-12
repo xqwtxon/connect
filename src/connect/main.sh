@@ -10,6 +10,7 @@ fi
 
 if [ -e "$TEMP_FILE" ]; then
 	mv "$TEMP_FILE" "$PREFIX/tmp/connect.sh/cache-$(date +%F-%I-%M-%S).old"
+        rm -rf "$PREFIX/tmp/connect.sh/*"
 fi
 
 if [ $# == 0 ]; then
