@@ -11,7 +11,6 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
-        - name: Export the Program
-          run: cp "src/connect/main.sh" "$PREFIX/bin/connect" && chmod +x "$PREFIX/bin/connect"
         - name: Test the Program
-          run: connect --verbose https://example.com/
+          working-directory: "src/connect/"
+          run: mv "main.sh" "connect.sh" && bash connect.sh --verbose https://example.com/
