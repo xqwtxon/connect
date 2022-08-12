@@ -1,0 +1,16 @@
+name: Lint
+
+on:
+   push:
+      branch: [main]
+   workflow_dispatch:
+
+jobs:
+   lints:
+      name: Analyse
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Test the Program
+          working-directory: src/connect/
+          run: bash connect.sh --verbose https://example.com/
