@@ -24,6 +24,12 @@ if [ ! "$?" == "0" ]; then
 	echo "error" && echo "[!] Please check your bash permission! Please make sure the $PREFIX/bin is accessible to you." && exit 1
 else echo "done"
 fi
+echo "[*] Installing requirements..."
+if [ ! "$(command -v curl)" &> "/dev/null" ]; then
+	echo -n "[*] Installing: cUrl"
+	apt install curl
+else echo "[*] Installed Requirements!"
+fi
 echo "[*] Running the Updater Version Check..."
 bash "$PREFIX/tmp/connect.update.sh" --version
 echo "[!] Done! You can now type 'connect --help' to view command information!"
