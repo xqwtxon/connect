@@ -12,7 +12,7 @@ if [ ! "$?" == "0" ]; then
 else echo "done"
 fi
 echo -n "[*] Downloading Update File: "
-curl -sL "https://raw.githubusercontent.com/xqwtxon/connect.sh/v0.0.4/src/connect/update.sh" -o "connect.update.sh"
+curl -sL "https://raw.githubusercontent.com/xqwtxon/connect.sh/v0.0.4/src/connect/update.sh" -o "$TEMP/connect.update.sh"
 if [ ! "$?" == "0" ]; then
 	echo "error" && echo "[!] Please check your connection and try again!" && exit 1
 else echo "done"
@@ -34,3 +34,4 @@ echo "[*] Running the Updater Version Check..."
 bash "$PREFIX/tmp/connect.update.sh" --version
 echo "[!] Done! You can now type 'connect --help' to view command information!"
 exit 0
+
