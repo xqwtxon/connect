@@ -56,7 +56,7 @@ if [ "$1" == "--update" ]; then
 			echo "bad"
 		else echo "ok"
 		fi
-		cp "$TEMP_EXEC_FILE" "$PREFIX/bin/connect" && chmod +x "$PREFIX/bin/connect" # this should fixed soon...
+		mv "$TEMP_EXEC_FILE" "$PREFIX/bin/connect" && chmod +x "$PREFIX/bin/connect" # this should fixed...
 		echo "[!] Sucessfully updated to latest version."
 		exit 0
 	fi
