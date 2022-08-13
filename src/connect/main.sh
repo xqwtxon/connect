@@ -157,10 +157,10 @@ case $1 in
      	echo "ReinfyTeam Software Development <https://www.reinfy.tk/>"
      	;;
 	"--version")
-		echo "Connect.sh — v0.0.2 for $(uname -o)"
+		echo "0.0.3"
 		;;
 		"-v")
-		echo "Connect.sh — v0.0.2 for $(uname -o)"
+		echo "0.0.3"
 		;;
 	       *)
 		if [[ ! "$1" =~ "https://" ]]; then
