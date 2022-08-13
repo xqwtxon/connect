@@ -162,6 +162,14 @@ case $1 in
 		"-v")
 		echo "0.0.3"
 		;;
+	"--update")
+		echo -n "[*] Downloading Update File: "
+		curl -sL "https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/update.sh" -o "$PREFIX/tmp/connect-update.sh"
+		if [ ! "$?" == "0" ]; then
+			echo "bad" && echo "[!] Update could resolve to the host."
+		else echo "ok" && bash "$PREFIX/tmp/connect-update.sh" --update
+		if
+		;;
 	       *)
 		if [[ ! "$1" =~ "https://" ]]; then
 			echo "Invalid Usage: There's no named '$1' in the options. Please try to use 'connect --help' for usage."
