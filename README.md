@@ -12,7 +12,15 @@ A Powerful URL Connect Test
 | `--version, -v` | Prints the Software Version |
 | `--update, -u`  | Update the Software |
 
-# Updating to Latest
+# Installation
+- Run the following command to install the following items:
+  ```sh
+  curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/setup.sh | bash -s -
+  ```
+- It will install the following requirements.
+- When installation is done, you can now start executing: `connect --help`!
+
+# Updating
 Upgrading to Latest should be online.
 
 - Run the following command `connect --update`
