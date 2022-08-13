@@ -2,6 +2,10 @@
 #!/bin/sh
 #!/bin/bash
 
+VERSION="0.0.4"
+
+
+
 TEMP_FILE="$PREFIX/tmp/connect.sh/cache"
 
 if [ ! -e "$PREFIX/tmp/connect.sh/" ]; then
@@ -28,12 +32,13 @@ if [ $# == 0 ]; then
 	echo "--version, -v	Prints the Software Version."
 	echo "--update, -u	Update the Software"
 	echo ""
-	echo "Error Status: When error occur's, the exit code will 1"
-	echo "		    When there's nothing occur's, the exit code will 0"
+	echo "Error Status: When error occur's, the exit code will be 1"
+	echo "		    When there's nothing occur's, the exit code will be 0"
 	echo ""
 	echo ""
 	echo "Copyright by ReinfyTeam (c) 2022"
 	echo "ReinfyTeam Software Development <https://www.reinfy.tk/>"
+	exit 0
 fi
 
 case $1 in
@@ -130,8 +135,8 @@ case $1 in
      	echo "--version, -v	Prints the Software Version."
 	echo "--update, -u	Update the Software"
      	echo ""
-     	echo "Error Status: When error occur's, the exit code will 1"
-     	echo "		    When there's nothing occur's, the exit code will 0"
+     	echo "Error Status: When error occur's, the exit code will be 1"
+     	echo "		    When there's nothing occur's, the exit code will be 0"
      	echo ""
      	echo ""
      	echo "Copyright by ReinfyTeam (c) 2022"
@@ -152,18 +157,18 @@ case $1 in
      	echo "--version, -v	Prints the Software Version."
 	echo "--update, -u	Update the Software"
      	echo ""
-     	echo "Error Status: When error occur's, the exit code will 1"
-     	echo "		    When there's nothing occur's, the exit code will 0"
+     	echo "Error Status: When error occur's, the exit code will be 1"
+     	echo "		    When there's nothing occur's, the exit code will be 0"
      	echo ""
      	echo ""
      	echo "Copyright by ReinfyTeam (c) 2022"
      	echo "ReinfyTeam Software Development <https://www.reinfy.tk/>"
      	;;
 	"--version")
-		echo "0.0.3"
+		echo "$VERSION"
 		;;
 		"-v")
-		echo "0.0.3"
+		echo "$VERSION"
 		;;
 	"--update")
 		echo -n "[*] Downloading Update File: "
@@ -171,7 +176,7 @@ case $1 in
 		if [ ! "$?" == "0" ]; then
 			echo "bad" && echo "[!] Update could resolve to the host."
 		else echo "ok" && bash "$PREFIX/tmp/connect-update.sh" --update
-		if
+		fi
 		;;
 		"-u")
 		echo -n "[*] Downloading Update File: "
@@ -179,18 +184,14 @@ case $1 in
                 if [ ! "$?" == "0" ]; then
                         echo "bad" && echo "[!] Update could resolve to the host."
                 else echo "ok" && bash "$PREFIX/tmp/connect-update.sh" --update
-                if
+                fi
                 ;;
 	       *)
-		if [[ ! "$1" =~ "https://" ]]; then
-			echo "Invalid Usage: There's no named '$1' in the options. Please try to use 'connect --help' for usage."
-		else
-			curl -sL $1 >> $TEMP_FILE
-			if [ ! "$?" == "0" ];
-				then echo "connect: An error occur when connecting to $1." && exit 1
-				else echo "connect: Sucessfully connected and tested the url." && exit 0
-			fi
-		fi
+		  curl -sL $1 >> $TEMP_FILE
+		  if [ ! "$?" == "0" ];
+			then echo "connect: An error occur when connecting to '$1'." && exit 1
+			else echo "connect: Sucessfully connected and tested the url." && exit 0
+		  fi
 		;;
 esac
 
