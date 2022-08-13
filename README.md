@@ -35,6 +35,7 @@ Upgrading to Latest should be online.
 Use the following command to test connection on the url.
 
 > **Warning**
+>
 > If your url doesnt start with `https:// or http:// or with .` that is not valid url
 
 ```sh
@@ -42,4 +43,5 @@ connect https://example.com
 ```
 
 > **Note**
+>
 > You can use `connect -p https://example.com` to check connection whether bad or ok.
