@@ -42,14 +42,14 @@ if [ "$1" == "--version" ]; then
 	fi
 	if [ ! "$(connect --version)" == "$(cat $TEMP_FILE)" ]; then
 		echo "[*] New Update Found: $(connect --version) ~ v$(cat $TEMP_FILE)"
-	else echo "[*] Already up to date." && exit 0
+	else echo "[*] Already up to date."
 	fi
 fi
 
 if [ "$1" == "--update" ]; then
 	bash "${BASH_SOURCE[0]}" --version
-	if [ ! "$?" == "0" ]; then
-		TEMP_EXEC_FILE="$PREFIX/tmp/connect.sh"
+	if [ "$?" == "0" ]; then
+		TEMP_EXEC_FILE="$PREFIX/tmp/connect.update.sh"
 		echo -n "[*] Getting latest 'connect' program: "
 		curl -sL "https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/main.sh" >> "$TEMP_EXEC_FILE"
 		if [ ! "$?" == "0" ]; then
