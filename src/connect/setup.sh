@@ -1,4 +1,4 @@
-version="0.0.1"
+version="0.0.2"
 
 TEMP="$PREFIX/tmp"
 
@@ -28,10 +28,12 @@ echo "[*] Installing requirements..."
 if [ ! "$(command -v curl)" &> "/dev/null" ]; then
 	echo -n "[*] Installing: cUrl"
 	apt install curl
-else echo "[*] Installed Requirements!"
+	echo "[*] Successfully Installed the Requirements!"
+else echo "[*] Already Installed the Requirements!"
 fi
 echo "[*] Running the Updater Version Check..."
 bash "$PREFIX/tmp/connect.update.sh" --version
 echo "[!] Done! You can now type 'connect --help' to view command information!"
 exit 0
 
+rm -rf "$TEMP/connect.update.sh" # this should fixed to ensure no duplicates!
