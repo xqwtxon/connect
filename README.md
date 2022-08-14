@@ -31,7 +31,7 @@ Upgrading to Latest should be online.
 - Enjoy, use the 'connect --version' to check version!
   - If you're experiencing `Permission Denied` on `cp`, that means you must resolve the permissions between `$PREFIX/bin`.
 
-# Testing Connections ![](https://img.shields.io/badge/Status-Finished-brightgreen?style=flat-square&logo=github)
+# Connection Test ![](https://img.shields.io/badge/Status-Finished-brightgreen?style=flat-square&logo=github)
 Use the following command to test connection on the url.
 
 > **Warning**
