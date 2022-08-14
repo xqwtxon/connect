@@ -10,7 +10,9 @@ jobs:
       name: Analyse
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
-        - name: Test the Program
-          working-directory: "src/connect/"
-          run: mv "main.sh" "connect.sh" && bash connect.sh --verbose https://example.com/
+        - name: Setup the Connect.sh
+          run: curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/setup.sh | bash -s -
+        - name: Version Check
+          run: curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/update.sh -o "update.sh" && chmod +x "update.sh" && bash "update.sh" --version
+        - name: Test the Connect.sh
+          run: connect -p https://example.com/
