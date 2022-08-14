@@ -8,7 +8,7 @@ on:
 jobs:
    lints:
       name: Analyse
-      runs-on: ubuntu-latest
+      runs-on: macos-latest
       steps:
         - name: Setup the Connect.sh
           run: curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/setup.sh | bash -s -
