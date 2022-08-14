@@ -1,7 +1,5 @@
 version="0.0.2"
-
 TEMP="$PREFIX/tmp"
-
 echo -n "[*] Setup Version: "
 sleep 2s
 echo "v$version"
