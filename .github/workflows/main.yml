@@ -23,7 +23,7 @@ jobs:
               curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/main.sh -o "connect.sh"
               bash "connect.sh"
    macos:
-      name: Ubuntu
+      name: Mac OS
       runs-on: macos-latest
       steps:
         - name: Run the Program
