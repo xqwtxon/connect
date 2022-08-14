@@ -6,13 +6,31 @@ on:
    workflow_dispatch:
 
 jobs:
-   lints:
-      name: Analyse
+   ubuntu:
+      name: Ubuntu
+      runs-on: ubuntu-latest
+      steps:
+        - name: Run the Program
+          run: |
+              curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/main.sh -o "connect.sh"
+              bash "connect.sh"
+   windows:
+      name: Windows
+      runs-on: windows-latest
+      steps:
+        - name: Run the Program
+          run: |
+              curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/main.sh -o "connect.sh"
+              bash "connect.sh"
+   macos:
+      name: Ubuntu
       runs-on: macos-latest
       steps:
-        - name: Setup the Connect.sh
-          run: curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/setup.sh | bash -s -
-        - name: Version Check
-          run: curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/update.sh -o "update.sh" && chmod +x "update.sh" && bash "update.sh" --version
-        - name: Test the Connect.sh
-          run: connect -p https://example.com/
+        - name: Run the Program
+          run: |
+              curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/main.sh -o "connect.sh"
+              bash "connect.sh"
+      
+
+      
+
