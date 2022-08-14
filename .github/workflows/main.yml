@@ -1,4 +1,4 @@
-name: Lint
+name: Checkout
 
 on:
    push:
@@ -13,7 +13,7 @@ jobs:
         - name: Run the Program
           run: |
               curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/main.sh -o "connect.sh"
-              bash "connect.sh"
+              bash "connect.sh" --verbose https://example.com/
    windows:
       name: Windows
       runs-on: windows-latest
@@ -21,7 +21,7 @@ jobs:
         - name: Run the Program
           run: |
               curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/main.sh -o "connect.sh"
-              bash "connect.sh"
+              bash "connect.sh" --verbose https://example.com/
    macos:
       name: Mac OS
       runs-on: macos-latest
@@ -29,7 +29,7 @@ jobs:
         - name: Run the Program
           run: |
               curl -sL https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/main.sh -o "connect.sh"
-              bash "connect.sh"
+              bash "connect.sh" --verbose https://example.com 
       
 
       
