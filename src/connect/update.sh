@@ -51,13 +51,14 @@ if [ "$1" == "--update" ]; then
 	if [ "$?" == "0" ]; then
 		TEMP_EXEC_FILE="$PREFIX/tmp/connect.update.sh"
 		echo -n "[*] Getting latest 'connect' program: "
-		curl -sL "https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/connect" >> "$TEMP_EXEC_FILE"
+		curl -sL "https://raw.githubusercontent.com/xqwtxon/connect.sh/stable/src/connect/connect" -o "$TEMP_EXEC_FILE"
 		if [ ! "$?" == "0" ]; then
 			echo "bad"
 		else echo "ok"
 		fi
 		mv "$TEMP_EXEC_FILE" "$PREFIX/bin/connect" && chmod +x "$PREFIX/bin/connect" # this should fixed...
 		echo "[!] Sucessfully updated to latest version."
+		rm "$TEMP_EXEC_FILE"
 		exit 0
 	fi
 fi
