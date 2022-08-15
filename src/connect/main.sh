@@ -1,7 +1,6 @@
-#!/bin/env bash
 #!/bin/sh
 #!/bin/bash
-
+#!/bin/env bash
 VERSION="0.0.4"
 
 
