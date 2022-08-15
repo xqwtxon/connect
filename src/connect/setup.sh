@@ -4,13 +4,13 @@ echo -n "[*] Setup Version: "
 sleep 2s
 echo "v$version"
 echo -n "[*] Downloading Connect.sh: "
-curl -sL "https://raw.githubusercontent.com/xqwtxon/connect.sh/v0.0.4/src/connect/connect" -o "$TEMP/connect.exec"
+curl -sL "https://raw.githubusercontent.com/xqwtxon/connect.sh/main/src/connect/connect" -o "$TEMP/connect.exec"
 if [ ! "$?" == "0" ]; then
 	echo "error" && echo "[!] Please check your connection and try again!" && exit 1
 else echo "done"
 fi
 echo -n "[*] Downloading Update File: "
-curl -sL "https://raw.githubusercontent.com/xqwtxon/connect.sh/v0.0.4/src/connect/update.sh" -o "$TEMP/connect.update.sh"
+curl -sL "https://raw.githubusercontent.com/xqwtxon/connect.sh/main/src/connect/update.sh" -o "$TEMP/connect.update.sh"
 if [ ! "$?" == "0" ]; then
 	echo "error" && echo "[!] Please check your connection and try again!" && exit 1
 else echo "done"
