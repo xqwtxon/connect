@@ -1,4 +1,4 @@
-version="0.0.3"
+version="0.0.4"
 TEMP="$PREFIX/tmp"
 echo -n "[*] Setup Version: "
 sleep 2s
